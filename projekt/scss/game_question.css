@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
 .game_container_main {
   width: 80%;
   height: 60%;
@@ -105,53 +103,4 @@
 .game_container_main_answears_element_money .money_buttons_btn:hover {
   font-size: 18px;
   transition: 0.2s;
-}
-
-.game_container {
-  width: 100%;
-  height: 100%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  font-family: "Open Sans", sans-serif;
-}
-
-.game_container_question_counter {
-  height: 10%;
-  width: 80%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-  padding: 0 150px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.game_container_question_counter_element {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-}
-
-.game_container_question_counter_element p {
-  font-size: 20px;
-}
-
-.game_container_money_container {
-  width: 80%;
-  height: 20%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-  margin-bottom: 10px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
