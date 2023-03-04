@@ -3,6 +3,8 @@ import React, {useEffect, useState} from "react";
 const MainQuestion = () => {
     return <div className="game_container_main_question"><h1>pytanie z wybranej kategorii</h1></div>
 }
+
+
 const AnswearElement = () => {
     return      <div className="game_container_main_answears_element">
                     <div className="game_container_main_answears_element_answear"><h1>Odpowiedź</h1></div>
