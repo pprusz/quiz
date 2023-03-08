@@ -1,9 +1,9 @@
 @import 'reset.scss';
 @import 'variables.scss';
 @import 'new_game.scss';
-@import 'category_chosen.scss';
+@import 'bad_end.scss';
 @import 'game.scss';
-
+@import 'rank.scss';
 
 
 body{
@@ -20,6 +20,9 @@ body{
         .app{
             width: 100%;
             height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 

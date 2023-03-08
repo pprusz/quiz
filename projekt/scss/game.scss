@@ -71,40 +71,36 @@
             height: 150px;
 
             &_fifty{
-                @include helpButton
+                @include helpButton;
+
+                &[disabled]{
+                    font-size: 20px;
+                    color: rgba(255, 255, 255, 0.562);
+                    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    transition: 0.3s;
+
+                    .tooltip{
+                        visibility: hidden;
+                    }
+                }
                 
             }
             &_public{
                 @include helpButton;
                 @include flexCenter;
 
-                span{
-                    color: white;
-                }
+            
             }
             &_change{
                 @include helpButton;
-                span{
-                    color: white;
-                }
+            
             }
             
             
         }
-        &_clock{
-            @include flexCenter;
-            width: 150px;
-            height: 150px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
-            span{
-                font-size: 40px;
-                transition: 0.2s;
-                
-            }
-            
-        }
+        
+
         &_check{
             @include flexCenter;
             width: 400px;

@@ -3,29 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { questions } from "./questions";
 
 const MainGame = () => {
+  const [gameQuestions, setGameQuestions] = useState();
   const [counter, setCounter] = useState(1);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex]);
-  const [timeLeft, setTimeLeft] = useState(60);
   const navigate = useNavigate();
-
-  
-  useEffect(() => {
-    // setCurrentQuestion(questions[questionIndex]);
-
-    const interval = setInterval(() => {
-      setTimeLeft((prevTimeLeft) => {
-        if (prevTimeLeft > 0) {
-          return prevTimeLeft - 1;
-        } else {
-          clearInterval(interval);
-          return prevTimeLeft;
-        }
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [disabledIndexes, setDisabledIndexes] = useState([]);
+  const [fiftyDisabled, setFiftyDisabled] = useState(false);
 
 
 
@@ -51,29 +35,40 @@ const MainGame = () => {
   }
 };
 
+
+
 const handleAnswerCheck = () => {
   if (currentQuestion.correctAnswer === currentQuestion.currentAnswer) {
     setCounter(counter + 1);
     if (counter >= questions.length) {
       navigate("/good");
     } else {
+      const disabledElements = document.querySelectorAll(".disabled");
+      disabledElements.forEach(element => element.classList.remove("disabled"));
       setQuestionIndex(questionIndex + 1);
       setCurrentQuestion(questions[questionIndex + 1]);
     }
-    console.log('dobra odpowiedź!')
-    // console.log(currentQuestion.currentAnswer)
   } else {
     navigate("/bad");
-    console.log('zła odpowiedź!')
-    // console.log(currentQuestion.correctAnswer)
-    // console.log(currentQuestion.currentAnswer)
   }
 };
-console.log(questionIndex)
-// console.log(question[i])
 
-
-
+const handle50Click = () => {
+  const correctAnswerIndex = currentQuestion.answers.findIndex(
+    (answer) => answer === currentQuestion.correctAnswer
+  );
+  const allAnswersIndexes = currentQuestion.answers.map((_, index) => index);
+  let wrongAnswerIndexes = allAnswersIndexes.filter(index => index !== correctAnswerIndex);
+  const randomIndex1 = wrongAnswerIndexes[Math.floor(Math.random() * wrongAnswerIndexes.length)];
+  wrongAnswerIndexes = wrongAnswerIndexes.filter((index) => index !== randomIndex1);
+  const randomIndex2 = wrongAnswerIndexes[Math.floor(Math.random() * wrongAnswerIndexes.length)];
+  wrongAnswerIndexes = wrongAnswerIndexes.filter((index) => index !== randomIndex2);
+  wrongAnswerIndexes = [randomIndex1, randomIndex2];
+  setDisabledIndexes(wrongAnswerIndexes);
+  console.log(correctAnswerIndex);
+  console.log(wrongAnswerIndexes);
+  setFiftyDisabled(prevState => true);
+};
 
   return (
     <div className="game_container">
@@ -84,15 +79,17 @@ console.log(questionIndex)
       <div className="game_container_main">
         <div className="game_container_main_question">{currentQuestion.question}</div>
         <div className="game_container_main_answers">
-          {currentQuestion.answers.map((answer, index) => (
-            <div
-              className={`answer ${currentQuestion.selectedAnswer === index ? "selected" : ""}`}
-              key={index}
-              onClick={() => handleAnswerClick(index , answer)}
-            >
-              {answer}
-            </div>
-          ))}
+        {currentQuestion.answers.map((answer, index) => (
+          <div
+            className={`answer ${currentQuestion.selectedAnswer === index ? "selected" : ""} ${
+              disabledIndexes.includes(index) ? "disabled" : ""
+            }`}
+            key={index}
+            onClick={() => handleAnswerClick(index, answer)}
+          >
+            {answer}
+          </div>
+        ))} 
 </div>
       </div>
 
@@ -100,7 +97,7 @@ console.log(questionIndex)
 
         <div className="game_container_buttons_help">
 
-          <button className="game_container_buttons_help_fifty">
+          <button disabled={fiftyDisabled} onClick={handle50Click} className="game_container_buttons_help_fifty">
             50:50
             <span className="tooltip">Usuń dwie błędne odpowiedzi</span>
             </button>
@@ -117,12 +114,8 @@ console.log(questionIndex)
 
         </div>
 
-
-        <div className="game_container_buttons_clock"><span>{timeLeft}</span></div>
-
-
         <div className="game_container_buttons_check">
-          <button onClick={handleAnswerCheck} className="game_container_buttons_check_button">Sprawdź odpowiedź</button>
+          <button  onClick={handleAnswerCheck} className="game_container_buttons_check_button">Sprawdź odpowiedź</button>
         </div>
       </div>
     </div>

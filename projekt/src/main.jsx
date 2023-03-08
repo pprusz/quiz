@@ -6,8 +6,9 @@ import {HashRouter, Route, Routes, Link, NavLink, Outlet} from 'react-router-dom
 
 import { questions } from "./questions";
 import { NewGame } from "./new_game";
-// import { Category } from "./category_container";
+import { Bad } from "./bad_end";
 import { MainGame } from "./main_game";
+import { Rank } from "./rank";
 
 
 
@@ -17,15 +18,15 @@ const root = createRoot(container)
 
 const App = () => {
  
-  const [gameQuestions, setGameQuestions] = useState();
 
 
   return <>
     <HashRouter>
       <Routes>
         <Route exact path="/" element={<NewGame/>} />
-        {/* <Route path="/category" element={<Category gameQuestions={gameQuestions}/>} /> */}
-        <Route path="/game" element={<MainGame questions={gameQuestions}/>} />
+        <Route path="/bad" element={<Bad/>}/>
+        <Route path="/game" element={<MainGame/>} />
+        <Route path="/rank" element={<Rank/>} />
       </Routes>
     </HashRouter>
 

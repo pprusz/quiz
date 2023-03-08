@@ -23,7 +23,10 @@ const NewGame = () =>{
             <Link to="/game">
                 <button  className="new_game_button" onClick={handleClick} disabled={inputValue.length < 3}>Rozpocznij nową gre!</button>
             </Link>
-            <button disabled className="new_game_rank">Ranking</button>
+
+            <Link to="/rank">
+                <button className="new_game_rank">Ranking</button>
+            </Link>
         </div>
     </>
 }

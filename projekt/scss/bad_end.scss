@@ -1,0 +1,54 @@
+@import 'variables.scss';
+
+.bad_end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 80%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(119, 5, 5);
+    box-shadow: 0 0 25px rgb(143, 0, 0);
+    border-radius: 20px;
+
+    &_title{
+        font-size: 70px;
+        color: rgb(167, 159, 159);
+        margin-bottom: 30px;
+    }
+
+    &_description{
+        font-size: 40px;
+        color: rgb(167, 159, 159);
+        margin-top: 50px;
+    }
+
+    a{
+        @include flexCenter;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    &_button{
+        box-shadow: 0 0 25px rgb(143, 0, 0);        
+        background: $color-category-btns;
+        width: 70%;
+        height: 100px;
+        border: 1px solid rgb(119, 5, 5);
+        border-radius: 20px;
+        margin-top: 70px;
+        transition: 0.3s;
+        cursor: pointer;
+        font-size: 30px;
+
+        
+
+        &:hover{
+            font-size: 35px;
+            box-shadow: 0 0 35px rgb(143, 0, 0); 
+        
+            
+        }
+    }
+}
