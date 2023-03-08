@@ -18,6 +18,62 @@ const questions = [
         answers: ['Rosja', 'Kanada', 'Chiny'],
         correctAnswer: 'Rosja',
       },
+      { category: 'Literatura',
+        question: 'Który z tych autorów napisał "Lalkę"?',
+        answers: ['Bolesław Prus', 'Henryk Sienkiewicz', 'Adam Mickiewicz', 'Juliusz Słowacki'],
+        correctAnswer: 'Bolesław Prus',
+      },
+      { category: 'Historia',
+        question: 'Które państwo było przeciwnikiem Polski w wojnie polsko-bolszewickiej?',
+        answers: ['Niemcy', 'Rosja', 'Francja', 'Austria'],
+        correctAnswer: 'Rosja',
+      },
+      { category: 'Nauka',
+        question: 'Jaki pierwiastek jest składnikiem chemii organicznej?',
+        answers: ['Miedź', 'Węgiel', 'Żelazo', 'Srebro'],
+        correctAnswer: 'Węgiel',
+      },
+      { category: 'Sztuka',
+        question: 'Kto namalował obraz "Mona Lisa"?',
+        answers: ['Leonardo da Vinci', 'Vincent van Gogh', 'Pablo Picasso', 'Claude Monet'],
+        correctAnswer: 'Leonardo da Vinci',
+      },
+      { category: 'Muzyka',
+        question: 'Który z tych zespołów nie jest z Wielkiej Brytanii?',
+        answers: ['The Beatles', 'U2', 'Queen', 'AC/DC'],
+        correctAnswer: 'AC/DC',
+      },
+      { category: 'Sport',
+        question: 'Która dyscyplina sportu jest związana z okręgiem i ringiem?',
+        answers: ['Boks', 'Skoki narciarskie', 'Piłka nożna', 'Koszykówka'],
+        correctAnswer: 'Boks',
+      },
+      { category: 'Kuchnia',
+        question: 'Z jakiego kraju pochodzi sushi?',
+        answers: ['Japonia', 'Chiny', 'Korea', 'Wietnam'],
+        correctAnswer: 'Japonia',
+      },
 ]
 
 export {questions}
+
+
+
+
+
+
+// Kategoria: Film
+// Pytanie: Który z tych filmów nie jest z serii "Gwiezdne wojny"?
+// a) Gwiezdne wojny: Nowa nadzieja
+// b) Gwiezdne wojny: Atak klonów
+// c) Gwiezdne wojny: Ostatni Jedi
+// d) Terminator
+// Prawidłowa odpowiedź: d) Terminator
+
+// Kategoria: Polityka
+// Pytanie: Który kraj ma najwięcej ludności na świecie?
+// a) Indie
+// b) Chiny
+// c) Stany Zjednoczone
+// d) Rosja
+// Prawidłowa odpowiedź: b) Chiny

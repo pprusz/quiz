@@ -1,9 +1,27 @@
 import React, {useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
+import { questions } from "./questions";
 
-const Category = () =>{
-    return <div className="category_container">
-                    <button className="category_container_button category_1"><h1>coś tam jakaś kategoria</h1></button>
-                    <button className="category_container_button category_2">Marki samochodów</button>
-            </div>
+
+const Category = (gameQuestion) =>{
+
+
+
+    return <>
+
+
+    <div className="category_container">
+        <Link to="/game">
+            {questions.map((quest,index)=>{
+                <button key={index}>{quest.category}</button>
+            })}
+            {/* <button  className={`category_container_button`}>{gameQuestion[0].category}</button> */}
+        </Link>
+    </div>
+            
+    </>
 }
+
+
+
 export {Category}
