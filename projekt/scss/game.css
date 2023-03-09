@@ -156,6 +156,37 @@
   transition: 0.3s;
 }
 
+.game_container_buttons_help_fifty[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_fifty[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_fifty[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_fifty[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+}
+
+.game_container_buttons_help_fifty[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_fifty[disabled] .tooltip {
+  visibility: hidden;
+}
+
 .game_container_buttons_help_fifty span {
   display: flex;
   justify-content: center;
@@ -204,18 +235,6 @@
   font-size: 15px;
 }
 
-.game_container_buttons_help_fifty[disabled] {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.562);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-}
-
-.game_container_buttons_help_fifty[disabled] .tooltip {
-  visibility: hidden;
-}
-
 .game_container_buttons_help_public {
   position: relative;
   width: 100px;
@@ -231,6 +250,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.game_container_buttons_help_public[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_public[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_public[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_public[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+}
+
+.game_container_buttons_help_public[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_public[disabled] .tooltip {
+  visibility: hidden;
 }
 
 .game_container_buttons_help_public span {
@@ -293,6 +343,37 @@
   background: transparent;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.game_container_buttons_help_change[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_change[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_change[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_change[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+}
+
+.game_container_buttons_help_change[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_change[disabled] .tooltip {
+  visibility: hidden;
 }
 
 .game_container_buttons_help_change span {

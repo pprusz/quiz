@@ -9,7 +9,11 @@ const MainGame = () => {
   const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex]);
   const navigate = useNavigate();
   const [disabledIndexes, setDisabledIndexes] = useState([]);
+
+  // Ustawienia do disabled do podpowiedzi 
   const [fiftyDisabled, setFiftyDisabled] = useState(false);
+  const [changeDisabled, setChangeDisabled] = useState(false);
+  const [publicDisabled, setPublicDisabled] = useState(false);
 
 
 
@@ -51,6 +55,7 @@ const handleAnswerCheck = () => {
   } else {
     navigate("/bad");
   }
+  setDisabledIndexes([]);
 };
 
 const handle50Click = () => {
@@ -65,11 +70,16 @@ const handle50Click = () => {
   wrongAnswerIndexes = wrongAnswerIndexes.filter((index) => index !== randomIndex2);
   wrongAnswerIndexes = [randomIndex1, randomIndex2];
   setDisabledIndexes(wrongAnswerIndexes);
-  console.log(correctAnswerIndex);
-  console.log(wrongAnswerIndexes);
   setFiftyDisabled(prevState => true);
 };
 
+const handleChangeQuestionClick = () => {
+  if (questionIndex < questions.length - 1) {
+    setCurrentQuestion(questions[questionIndex + 1]);
+    setQuestionIndex(questionIndex + 1);
+    setChangeDisabled(prevState => true);
+  }
+};
   return (
     <div className="game_container">
       <div className="game_container_question_counter">
@@ -107,7 +117,7 @@ const handle50Click = () => {
             <span className="tooltip">Zapytaj publiczność</span>
             </button>
 
-          <button className="game_container_buttons_help_change">
+          <button disabled={changeDisabled} onClick={handleChangeQuestionClick} className="game_container_buttons_help_change">
             <span className="fas fa-arrow-right"></span>
             <span className="tooltip">Zmień pytanie</span>
             </button>

@@ -45,6 +45,8 @@ $font-text: 'Open Sans', sans-serif;
     cursor: pointer;
     transition: 0.3s;
 
+    
+
     span{
         @include flexCenter;
         font-size: 35px;
@@ -89,5 +91,36 @@ $font-text: 'Open Sans', sans-serif;
         }
         
 
+    }
+    &[disabled]{
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.562);
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: 0.3s;
+
+        &:hover{
+            box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
+            font-size: 20px;
+
+            .tooltip{
+                visibility: hidden;
+            }
+        }      
+
+        span{
+            color: rgba(255, 255, 255, 0.562);
+            font-size: 20px;
+
+            &:hover{
+                font-size: 20xp;
+            }
+        }
+
+        .tooltip{
+            visibility: hidden;
+        }
     }
 }
