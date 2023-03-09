@@ -116,5 +116,88 @@
 
         
     }
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 99;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        height: 75%;
+        border-radius: 20px;
+        border: 1px solid white;
+        box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        background: $color-help-public;
 
+
+
+        &_content {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            align-items: center;
+
+            &_question{
+                font-size: 30px;
+                text-align: center;
+
+            }
+
+            &_chart{
+                width: 90%;
+                height: 70%;
+                // border: 1px solid white;
+                margin: 50px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            &_element{
+                width: 23%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                &_answer{
+                    font-weight: bold;
+                    font-size: 25px;
+                }
+                &_percentage{
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin: 20px 0;
+                }
+                &_bar{
+                    width: 50%;
+                    height: 1px;
+                    border: 1px solid black;
+                    background: $color-category-btns;
+                    border-radius: 10px;
+                    transition: 1.5s;
+                    margin-bottom: 50px;
+                }
+            }
+            
+          }
+        
+          
+          &_close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 50px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            
+          }
+      }
+      
+      
 }

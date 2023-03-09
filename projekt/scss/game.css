@@ -156,37 +156,6 @@
   transition: 0.3s;
 }
 
-.game_container_buttons_help_fifty[disabled] {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.562);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-}
-
-.game_container_buttons_help_fifty[disabled]:hover {
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-  font-size: 20px;
-}
-
-.game_container_buttons_help_fifty[disabled]:hover .tooltip {
-  visibility: hidden;
-}
-
-.game_container_buttons_help_fifty[disabled] span {
-  color: rgba(255, 255, 255, 0.562);
-}
-
-.game_container_buttons_help_fifty[disabled] span:hover {
-  font-size: 20xp;
-}
-
-.game_container_buttons_help_fifty[disabled] .tooltip {
-  visibility: hidden;
-}
-
 .game_container_buttons_help_fifty span {
   display: flex;
   justify-content: center;
@@ -235,6 +204,38 @@
   font-size: 15px;
 }
 
+.game_container_buttons_help_fifty[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_fifty[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_fifty[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_fifty[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+  font-size: 20px;
+}
+
+.game_container_buttons_help_fifty[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_fifty[disabled] .tooltip {
+  visibility: hidden;
+}
+
 .game_container_buttons_help_public {
   position: relative;
   width: 100px;
@@ -250,37 +251,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.game_container_buttons_help_public[disabled] {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.562);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-}
-
-.game_container_buttons_help_public[disabled]:hover {
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-  font-size: 20px;
-}
-
-.game_container_buttons_help_public[disabled]:hover .tooltip {
-  visibility: hidden;
-}
-
-.game_container_buttons_help_public[disabled] span {
-  color: rgba(255, 255, 255, 0.562);
-}
-
-.game_container_buttons_help_public[disabled] span:hover {
-  font-size: 20xp;
-}
-
-.game_container_buttons_help_public[disabled] .tooltip {
-  visibility: hidden;
 }
 
 .game_container_buttons_help_public span {
@@ -331,6 +301,38 @@
   font-size: 15px;
 }
 
+.game_container_buttons_help_public[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_public[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_public[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_public[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+  font-size: 20px;
+}
+
+.game_container_buttons_help_public[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_public[disabled] .tooltip {
+  visibility: hidden;
+}
+
 .game_container_buttons_help_change {
   position: relative;
   width: 100px;
@@ -343,37 +345,6 @@
   background: transparent;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.game_container_buttons_help_change[disabled] {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.562);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-}
-
-.game_container_buttons_help_change[disabled]:hover {
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-  font-size: 20px;
-}
-
-.game_container_buttons_help_change[disabled]:hover .tooltip {
-  visibility: hidden;
-}
-
-.game_container_buttons_help_change[disabled] span {
-  color: rgba(255, 255, 255, 0.562);
-}
-
-.game_container_buttons_help_change[disabled] span:hover {
-  font-size: 20xp;
-}
-
-.game_container_buttons_help_change[disabled] .tooltip {
-  visibility: hidden;
 }
 
 .game_container_buttons_help_change span {
@@ -424,6 +395,38 @@
   font-size: 15px;
 }
 
+.game_container_buttons_help_change[disabled] {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.game_container_buttons_help_change[disabled]:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.game_container_buttons_help_change[disabled]:hover .tooltip {
+  visibility: hidden;
+}
+
+.game_container_buttons_help_change[disabled] span {
+  color: rgba(255, 255, 255, 0.562);
+  font-size: 20px;
+}
+
+.game_container_buttons_help_change[disabled] span:hover {
+  font-size: 20xp;
+}
+
+.game_container_buttons_help_change[disabled] .tooltip {
+  visibility: hidden;
+}
+
 .game_container_buttons_check {
   display: flex;
   justify-content: center;
@@ -448,4 +451,82 @@
 .game_container_buttons_check_button:hover {
   font-size: 27px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+.game_container .modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 99;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  background: linear-gradient(180deg, rgba(192, 192, 192, 0.8) 0%, rgba(128, 128, 128, 0.8) 50%, rgba(192, 192, 192, 0.8) 100%);
+}
+
+.game_container .modal_content {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game_container .modal_content_question {
+  font-size: 30px;
+  text-align: center;
+}
+
+.game_container .modal_content_chart {
+  width: 90%;
+  height: 70%;
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.game_container .modal_content_element {
+  width: 23%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game_container .modal_content_element_answer {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.game_container .modal_content_element_percentage {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.game_container .modal_content_element_bar {
+  width: 50%;
+  height: 1px;
+  border: 1px solid black;
+  background: linear-gradient(180deg, silver 0%, gray 50%, silver 100%);
+  border-radius: 10px;
+  transition: 1.5s;
+  margin-bottom: 50px;
+}
+
+.game_container .modal_close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 50px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }

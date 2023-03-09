@@ -14,6 +14,24 @@ const MainGame = () => {
   const [fiftyDisabled, setFiftyDisabled] = useState(false);
   const [changeDisabled, setChangeDisabled] = useState(false);
   const [publicDisabled, setPublicDisabled] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  function setPercentage() {
+    const bars = document.getElementsByClassName("modal_content_element_bar");
+    const percentages = document.getElementsByClassName('modal_content_element_percentage')
+    for (let i = 0; i < bars.length; i++) {
+      bars[i].style.height = `${currentQuestion.public[i]*2}px`;
+      percentages[i].innerHTML = `${currentQuestion.public[i]}%`;
+    }
+  }
+const handlePublicClick = () => {
+  setShowModal(true);
+};
+const handlePublicAsk = () =>{
+  setPercentage();
+  setPublicDisabled(prevState => true);
+}
+
 
 
 
@@ -56,6 +74,7 @@ const handleAnswerCheck = () => {
     navigate("/bad");
   }
   setDisabledIndexes([]);
+
 };
 
 const handle50Click = () => {
@@ -73,7 +92,7 @@ const handle50Click = () => {
   setFiftyDisabled(prevState => true);
 };
 
-const handleChangeQuestionClick = () => {
+const handleChangeClick = () => {
   if (questionIndex < questions.length - 1) {
     setCurrentQuestion(questions[questionIndex + 1]);
     setQuestionIndex(questionIndex + 1);
@@ -85,6 +104,26 @@ const handleChangeQuestionClick = () => {
       <div className="game_container_question_counter">
         <div className="game_container_question_counter_element">{counter}</div>
       </div>
+      {showModal && (
+            <div className="modal">
+              <div className="modal_content">
+                <span className="modal_close" onClick={() => setShowModal(false)}>x</span>
+                <h1 className="modal_content_question">{currentQuestion.question}</h1>
+                <div className="modal_content_chart">
+                {currentQuestion.answers.map((answer, index) => (
+                  <div className="modal_content_element" key={index}>
+                    <div className="modal_content_element_percentage"></div>
+                    <div className="modal_content_element_bar"></div>
+                    <div className='modal_content_element_answer'>{answer}</div>
+                  </div>
+                ))}
+                              
+                </div>
+                <button onClick={handlePublicAsk} className="game_container_buttons_check_button">Zapytaj publiczność</button>    
+
+              </div>
+            </div>
+          )}
 
       <div className="game_container_main">
         <div className="game_container_main_question">{currentQuestion.question}</div>
@@ -92,12 +131,10 @@ const handleChangeQuestionClick = () => {
         {currentQuestion.answers.map((answer, index) => (
           <div
             className={`answer ${currentQuestion.selectedAnswer === index ? "selected" : ""} ${
-              disabledIndexes.includes(index) ? "disabled" : ""
-            }`}
-            key={index}
-            onClick={() => handleAnswerClick(index, answer)}
-          >
-            {answer}
+              disabledIndexes.includes(index) ? "disabled" : ""}`}
+              key={index}
+              onClick={() => handleAnswerClick(index, answer)} >
+              {answer}
           </div>
         ))} 
 </div>
@@ -112,12 +149,14 @@ const handleChangeQuestionClick = () => {
             <span className="tooltip">Usuń dwie błędne odpowiedzi</span>
             </button>
 
-          <button className="game_container_buttons_help_public">
+          <button disabled={publicDisabled} onClick={handlePublicClick} className="game_container_buttons_help_public">
             <span className="fas fa-user"></span>
             <span className="tooltip">Zapytaj publiczność</span>
             </button>
 
-          <button disabled={changeDisabled} onClick={handleChangeQuestionClick} className="game_container_buttons_help_change">
+          
+
+          <button disabled={changeDisabled} onClick={handleChangeClick} className="game_container_buttons_help_change">
             <span className="fas fa-arrow-right"></span>
             <span className="tooltip">Zmień pytanie</span>
             </button>
