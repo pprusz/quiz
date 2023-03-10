@@ -63,108 +63,16 @@
         }
         .disabled{
             color: rgba(0, 0, 0, 0.555);
-            transition: 0.2s;
+            transition: 0.7s;
+            box-shadow:  0 0 55px red;
+            background: rgba(199, 1, 1, 0.568);
 
             &:hover{
                 font-size: 30px;
-                box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+                box-shadow:  0 0 55px red;
             }
         }
 
 
-
-        // &_element{
-        //     width: 23%;
-        //     height: 100%;
-        //     border-radius: 10px;
-        //     display: flex;
-        //     flex-direction: column;
-        //     // margin: 0 10px;
-        //     // padding: 10px;
-        //     // background: white;
-        //     // margin: 0 50px;
-        //     // box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        //     // border: 1px solid rgba(255, 255, 255, 0.5);
-
-
-
-
-        //     &_answear{
-        //         width: 100%;
-        //         background: $color-category-btns;
-        //         height: 50%;
-        //         border-radius: 10px;
-        //         box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        //         display: flex;
-        //         justify-content: center;
-        //         align-items: center;
-        //         font-size: 30px;
-        //         margin-bottom: 10px;
-        //         text-align: center;
-            
-                
-
-        //     }
-
-
-        //     &_money{
-        //         background: $color-category-btns;
-        //         width: 100%;
-        //         height: 50%;
-        //         border-radius: 10px;
-        //         box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        //         display: flex;
-        //         align-items: center;
-        //         // justify-content: space-between;
-        //         flex-direction: column;
-        //         border: none;
-        //         font-size: 30px;
-
-        //         &_added{
-        //             width: 100%;
-        //             text-align: center;
-        //             font-size: 40px;
-        //             margin: 20px 0;
-        //             // color: rgba(255, 255, 255, 0.8);
-        //         }
-
-
-        //         .money_buttons{
-        //             width: 100%;
-        //             height: 60px;
-        //             display: flex;
-        //             justify-content: space-around;
-
-
-        //             &_btn{
-        //                 margin: 10px 0;
-        //                 font-weight: bold;
-        //                 font-size: 15px;
-        //                 width: 22%;
-        //                 height: 40px;
-        //                 background: $color-money-container;
-        //                 border: none;
-        //                 box-shadow: 0 0 5px rgba(2,35,180,0.8);
-        //                 border-radius: 5px;
-        //                 cursor: pointer;
-        //                 transition: 0.2s;
-        //                 color: white;
-
-
-
-        //                 &:hover{
-        //                     font-size: 18px;
-        //                     transition: 0.2s;
-
-        //                 }
-        //         }
-        //         }
-        //     }
-        // }
-
-
-
     }
-    
-
 }

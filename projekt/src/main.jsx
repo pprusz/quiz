@@ -4,11 +4,11 @@ import { createRoot } from "react-dom/client";
 import {HashRouter, Route, Routes, Link, NavLink, Outlet} from 'react-router-dom';
 
 
-import { questions } from "./questions";
 import { NewGame } from "./new_game";
 import { Bad } from "./bad_end";
 import { MainGame } from "./main_game";
 import { Rank } from "./rank";
+import { Good } from "./good_end";
 
 
 
@@ -17,6 +17,9 @@ const root = createRoot(container)
 
 
 const App = () => {
+  const [counter, setCounter] = useState(1);
+  const [gameQuestions, setGameQuestions] = useState();
+
  
 
 
@@ -24,9 +27,10 @@ const App = () => {
     <HashRouter>
       <Routes>
         <Route exact path="/" element={<NewGame/>} />
-        <Route path="/bad" element={<Bad/>}/>
-        <Route path="/game" element={<MainGame/>} />
+        <Route path="/bad" element={<Bad counter={counter} setCounter={setCounter}/>}/>
+        <Route path="/game" element={<MainGame counter={counter} setCounter={setCounter}/>} />
         <Route path="/rank" element={<Rank/>} />
+        <Route path="/good" element={<Good/>}/>
       </Routes>
     </HashRouter>
 

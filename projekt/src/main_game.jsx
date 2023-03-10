@@ -1,21 +1,30 @@
 import React, {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { questions } from "./questions";
+import { Bad } from "./bad_end";
+import { Buttons } from "./buttons_help";
 
-const MainGame = () => {
-  const [gameQuestions, setGameQuestions] = useState();
-  const [counter, setCounter] = useState(1);
+const MainGame = (props) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex]);
-  const navigate = useNavigate();
   const [disabledIndexes, setDisabledIndexes] = useState([]);
 
+
+  const navigate = useNavigate();
+ 
+  const setCounter = props.setCounter;
+  const counter = props.counter;
+
   // Ustawienia do disabled do podpowiedzi 
-  const [fiftyDisabled, setFiftyDisabled] = useState(false);
-  const [changeDisabled, setChangeDisabled] = useState(false);
   const [publicDisabled, setPublicDisabled] = useState(false);
+
+  
   const [showModal, setShowModal] = useState(false);
 
+  const handlePublicAsk = () =>{
+    setPercentage();
+    setPublicDisabled(prevState => true);
+  }
   function setPercentage() {
     const bars = document.getElementsByClassName("modal_content_element_bar");
     const percentages = document.getElementsByClassName('modal_content_element_percentage')
@@ -24,14 +33,6 @@ const MainGame = () => {
       percentages[i].innerHTML = `${currentQuestion.public[i]}%`;
     }
   }
-const handlePublicClick = () => {
-  setShowModal(true);
-};
-const handlePublicAsk = () =>{
-  setPercentage();
-  setPublicDisabled(prevState => true);
-}
-
 
 
 
@@ -59,50 +60,14 @@ const handlePublicAsk = () =>{
 
 
 
-const handleAnswerCheck = () => {
-  if (currentQuestion.correctAnswer === currentQuestion.currentAnswer) {
-    setCounter(counter + 1);
-    if (counter >= questions.length) {
-      navigate("/good");
-    } else {
-      const disabledElements = document.querySelectorAll(".disabled");
-      disabledElements.forEach(element => element.classList.remove("disabled"));
-      setQuestionIndex(questionIndex + 1);
-      setCurrentQuestion(questions[questionIndex + 1]);
-    }
-  } else {
-    navigate("/bad");
-  }
-  setDisabledIndexes([]);
 
-};
 
-const handle50Click = () => {
-  const correctAnswerIndex = currentQuestion.answers.findIndex(
-    (answer) => answer === currentQuestion.correctAnswer
-  );
-  const allAnswersIndexes = currentQuestion.answers.map((_, index) => index);
-  let wrongAnswerIndexes = allAnswersIndexes.filter(index => index !== correctAnswerIndex);
-  const randomIndex1 = wrongAnswerIndexes[Math.floor(Math.random() * wrongAnswerIndexes.length)];
-  wrongAnswerIndexes = wrongAnswerIndexes.filter((index) => index !== randomIndex1);
-  const randomIndex2 = wrongAnswerIndexes[Math.floor(Math.random() * wrongAnswerIndexes.length)];
-  wrongAnswerIndexes = wrongAnswerIndexes.filter((index) => index !== randomIndex2);
-  wrongAnswerIndexes = [randomIndex1, randomIndex2];
-  setDisabledIndexes(wrongAnswerIndexes);
-  setFiftyDisabled(prevState => true);
-};
 
-const handleChangeClick = () => {
-  if (questionIndex < questions.length - 1) {
-    setCurrentQuestion(questions[questionIndex + 1]);
-    setQuestionIndex(questionIndex + 1);
-    setChangeDisabled(prevState => true);
-  }
-};
   return (
     <div className="game_container">
       <div className="game_container_question_counter">
-        <div className="game_container_question_counter_element">{counter}</div>
+        <div className="game_container_question_counter_element">Pytanie {counter} z 12</div>
+        <div className="game_container_question_counter_element">Czas gry: </div>
       </div>
       {showModal && (
             <div className="modal">
@@ -140,33 +105,22 @@ const handleChangeClick = () => {
 </div>
       </div>
 
-      <div className="game_container_buttons">
+      <Buttons 
+      counter={counter} 
+      setCounter={setCounter} 
+      questionIndex = {questionIndex} 
+      setQuestionIndex = {setQuestionIndex} 
+      currentQuestion = {currentQuestion} 
+      setCurrentQuestion = {setCurrentQuestion}
+      showModal = {showModal}
+      setShowModal = {setShowModal}
+      publicDisabled = {publicDisabled}
+      setPublicDisabled = {setPublicDisabled}
+      disabledIndexes = {disabledIndexes}
+      setDisabledIndexes = {setDisabledIndexes}
+      />
 
-        <div className="game_container_buttons_help">
-
-          <button disabled={fiftyDisabled} onClick={handle50Click} className="game_container_buttons_help_fifty">
-            50:50
-            <span className="tooltip">Usuń dwie błędne odpowiedzi</span>
-            </button>
-
-          <button disabled={publicDisabled} onClick={handlePublicClick} className="game_container_buttons_help_public">
-            <span className="fas fa-user"></span>
-            <span className="tooltip">Zapytaj publiczność</span>
-            </button>
-
-          
-
-          <button disabled={changeDisabled} onClick={handleChangeClick} className="game_container_buttons_help_change">
-            <span className="fas fa-arrow-right"></span>
-            <span className="tooltip">Zmień pytanie</span>
-            </button>
-
-        </div>
-
-        <div className="game_container_buttons_check">
-          <button  onClick={handleAnswerCheck} className="game_container_buttons_check_button">Sprawdź odpowiedź</button>
-        </div>
-      </div>
+      
     </div>
   );
 };

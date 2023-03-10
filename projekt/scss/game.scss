@@ -29,7 +29,7 @@
             @include flexCenter;
             color: white;
             font-size: 30px;
-            width: 50px;
+            width: 500px;
             height: 50px;
             text-align: center;
                         
@@ -104,7 +104,7 @@
                 font-size: 25px;
                 background: $color-category-btns;
                 border-radius: 20px;
-                transition: 0.3s;
+                transition: 0.2s;
 
                 &:hover{
                     font-size: 27px;
@@ -130,13 +130,14 @@
         border-radius: 20px;
         border: 1px solid white;
         box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(2px);
         background: $color-help-public;
+        color: white;
 
 
 
         &_content {
-            width: 80%;
+            width: 100%;
             height: 80%;
             display: flex;
             flex-direction: column;
@@ -181,6 +182,7 @@
                     border-radius: 10px;
                     transition: 1.5s;
                     margin-bottom: 50px;
+                    box-shadow: 0 0 55px rgba(255, 255, 255, 0.5);
                 }
             }
             
@@ -192,7 +194,6 @@
             top: 20px;
             right: 30px;
             font-size: 50px;
-            color: black;
             font-weight: bold;
             cursor: pointer;
             
