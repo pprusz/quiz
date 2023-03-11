@@ -8,6 +8,7 @@ const MainGame = (props) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex]);
   const [disabledIndexes, setDisabledIndexes] = useState([]);
+  const [gameTime, setGameTime] = useState(0)
 
 
   const navigate = useNavigate();
@@ -59,6 +60,17 @@ const MainGame = (props) => {
 };
 
 
+const startTime = Date.now();
+
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    setGameTime(Date.now() - startTime);
+    
+  }, 1000);
+  return () => clearInterval(intervalId);
+}, []);
+
+
 
 
 
@@ -67,7 +79,7 @@ const MainGame = (props) => {
     <div className="game_container">
       <div className="game_container_question_counter">
         <div className="game_container_question_counter_element">Pytanie {counter} z 12</div>
-        <div className="game_container_question_counter_element">Czas gry: </div>
+        <div className="game_container_question_counter_element">Czas gry: {Math.floor(gameTime/1000)} s</div>
       </div>
       {showModal && (
             <div className="modal">

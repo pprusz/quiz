@@ -65,6 +65,16 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+.new_game a {
+  width: 800px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
 .new_game_rank {
   background: linear-gradient(180deg, silver 0%, gray 50%, silver 100%);
   border: 1px solid white;

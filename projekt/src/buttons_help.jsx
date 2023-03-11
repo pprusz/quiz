@@ -27,7 +27,7 @@ const Buttons= (props)=>{
     const handleAnswerCheck = () => {
         if (currentQuestion.correctAnswer === currentQuestion.currentAnswer) {
           setCounter(counter + 1);
-          if (counter >= questions.length) {
+          if (counter >= questions.length - 1) {
             navigate("/good");
           } else {
             const disabledElements = document.querySelectorAll(".disabled");

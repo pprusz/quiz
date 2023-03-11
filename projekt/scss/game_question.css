@@ -19,6 +19,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 30px;
   width: 90%;
   height: 30%;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
@@ -47,18 +48,21 @@
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  font-size: 30px;
+  font-size: 25px;
   transition: 0.2s;
   border: none;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .game_container_main_answers .answer:hover {
-  font-size: 35px;
+  font-size: 28px;
+  padding: 0;
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
 }
 
 .game_container_main_answers .selected {
-  font-size: 35px;
+  font-size: 28px;
   background: linear-gradient(180deg, silver 0%, #40b40d 50%, silver 100%);
   transition: 0.2s;
   box-shadow: 0 0 35px #40b40d;

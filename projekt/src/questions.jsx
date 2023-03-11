@@ -1,89 +1,49 @@
-import React, {useState, useEffect} from "react";
+// import React, {useState} from "react";
+import { level1 } from "./questions/level1"
+import { level2 } from "./questions/level2";
+import { level3 } from "./questions/level3";
+import { level4 } from "./questions/level4";
+import { level5 } from "./questions/level5";
+import { level6 } from "./questions/level6";
+import { level7 } from "./questions/level7";
+import { level8 } from "./questions/level8";
+import { level9 } from "./questions/level9";
+import { level10 } from "./questions/level10";
+import { level11 } from "./questions/level11";
+import { level12 } from "./questions/level12";
+import { extraLevel } from "./questions/extralevel";
+const randomIndex = Math.floor(Math.random() * level1.length);
+const randomIndex2 = Math.floor(Math.random() * level2.length);
+const randomIndex3 = Math.floor(Math.random() * level3.length);
+const randomIndex4 = Math.floor(Math.random() * level4.length);
+const randomIndex5 = Math.floor(Math.random() * level5.length);
+const randomIndex6 = Math.floor(Math.random() * level6.length);
+const randomIndex7 = Math.floor(Math.random() * level7.length);
+const randomIndex8 = Math.floor(Math.random() * level8.length);
+const randomIndex9 = Math.floor(Math.random() * level9.length);
+const randomIndex10 = Math.floor(Math.random() * level10.length);
+const randomIndex11 = Math.floor(Math.random() * level11.length);
+const randomIndex12 = Math.floor(Math.random() * level12.length);
+const randomIndex13 = Math.floor(Math.random() * extraLevel.length);
+console.log(randomIndex,randomIndex2,randomIndex3,randomIndex4,randomIndex5,randomIndex6,randomIndex7,randomIndex8,randomIndex9,randomIndex10,randomIndex11,randomIndex12)
+
 
 
 
 const questions = [
-    {   category: 'Sąsiedzi Polski',
-        question: 'Które państwo graniczy z Polską na zachodzie?',
-        answers: ['Niemcy', 'Litwa', 'Czechy', 'Słowacja'],
-        public: [89,2,4,5],
-        correctAnswer: 'Niemcy',
-      },
-      { category: 'Stolica',
-        question: 'Które miasto jest stolicą Włoch?',
-        answers: [ 'Mediolan', 'Neapol', 'Rzym',  'Turyn'],
-        public: [1,4,95,0],
-        correctAnswer: 'Rzym',
-      },
-      { category: 'Powierzchnia państwa',
-        question: 'Które państwo jest największe pod względem powierzchni?',
-        answers: [ 'Kanada','Rosja', 'Chiny', 'Argentyna'],
-        public: [5,90,1,3],
-        correctAnswer: 'Rosja',
-      },
-      { category: 'Literatura',
-        question: 'Który z tych autorów napisał "Lalkę"?',
-        answers: ['Bolesław Prus', 'Henryk Sienkiewicz', 'Adam Mickiewicz', 'Juliusz Słowacki'],
-        public: [89,2,4,5],
-        correctAnswer: 'Bolesław Prus',
-      },
-      { category: 'Historia',
-        question: 'Które państwo było przeciwnikiem Polski w wojnie polsko-bolszewickiej?',
-        public: [2,98,0,0],
-        answers: ['Niemcy', 'Rosja', 'Francja', 'Austria'],
-        correctAnswer: 'Rosja',
-      },
-      { category: 'Nauka',
-        question: 'Jaki pierwiastek jest składnikiem chemii organicznej?',
-        public: [4,84,11,1],
-        answers: ['Miedź', 'Węgiel', 'Żelazo', 'Srebro'],
-        correctAnswer: 'Węgiel',
-      },
-      { category: 'Sztuka',
-        question: 'Kto namalował obraz "Mona Lisa"?',
-        answers: [ 'Vincent van Gogh', 'Pablo Picasso', 'Claude Monet','Leonardo da Vinci'],
-        public: [13,5,2,80],
-        correctAnswer: 'Leonardo da Vinci',
-      },
-      { category: 'Muzyka',
-        question: 'Który z tych zespołów nie jest z Wielkiej Brytanii?',
-        answers: ['The Beatles', 'U2', 'Queen', 'AC/DC'],
-        public: [11,9,5,75],
-        correctAnswer: 'AC/DC',
-      },
-      { category: 'Sport',
-        question: 'Która dyscyplina sportu jest związana z okręgiem i ringiem?',
-        answers: ['Boks', 'Skoki narciarskie', 'Piłka nożna', 'Koszykówka'],
-        public: [95,0,2,3],
-        correctAnswer: 'Boks',
-      },
-      { category: 'Kuchnia',
-        question: 'Z jakiego kraju pochodzi sushi?',
-        answers: ['Japonia', 'Chiny', 'Korea', 'Wietnam'],
-        public: [89,2,4,5],
-        correctAnswer: 'Japonia',
-      },
+  level1[randomIndex],
+  level2[randomIndex2],
+  level3[randomIndex3],
+  level4[randomIndex4],
+  level5[randomIndex5],
+  level6[randomIndex6],
+  level7[randomIndex8],
+  level8[randomIndex7],
+  level9[randomIndex9],
+  level10[randomIndex10],
+  level11[randomIndex11],
+  level12[randomIndex12],
+  extraLevel[randomIndex13],
 ]
 
 export {questions}
-
-
-
-
-
-
-// Kategoria: Film
-// Pytanie: Który z tych filmów nie jest z serii "Gwiezdne wojny"?
-// a) Gwiezdne wojny: Nowa nadzieja
-// b) Gwiezdne wojny: Atak klonów
-// c) Gwiezdne wojny: Ostatni Jedi
-// d) Terminator
-// Prawidłowa odpowiedź: d) Terminator
-
-// Kategoria: Polityka
-// Pytanie: Który kraj ma najwięcej ludności na świecie?
-// a) Indie
-// b) Chiny
-// c) Stany Zjednoczone
-// d) Rosja
-// Prawidłowa odpowiedź: b) Chiny
