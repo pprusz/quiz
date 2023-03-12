@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/bad" element={<Bad counter={counter} setCounter={setCounter}/>}/>
         <Route path="/game" element={<MainGame counter={counter} setCounter={setCounter}/>} />
         <Route path="/rank" element={<Rank/>} />
-        <Route path="/good" element={<Good/>}/>
+        <Route path="/good" element={<Good counter={counter} setCounter={setCounter}/>}/>
       </Routes>
     </HashRouter>
 

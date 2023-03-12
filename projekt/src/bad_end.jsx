@@ -5,6 +5,11 @@ import { questions } from "./questions";
 
 const Bad = (props) =>{
     const counter = props.counter;
+    const setCounter = props.setCounter;
+
+    const resetCounter = () => {
+        setCounter(1)
+    }
 
 
 
@@ -16,11 +21,11 @@ const Bad = (props) =>{
         <h1 className="bad_end_description">Twój czas gry to: </h1>
 
         <Link to="/">
-            <button className="bad_end_button">Spróbuj zagrać ponownie</button>
+            <button onClick={resetCounter} className="bad_end_button">Spróbuj zagrać ponownie</button>
         </Link>
 
         <Link to="/rank">
-            <button className="new_game_rank">Ranking</button>
+            <button  className="new_game_rank">Ranking</button>
         </Link>
     
     </div>

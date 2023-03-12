@@ -1,17 +1,5 @@
 // import React, {useState} from "react";
-import { level1 } from "./questions/level1"
-import { level2 } from "./questions/level2";
-import { level3 } from "./questions/level3";
-import { level4 } from "./questions/level4";
-import { level5 } from "./questions/level5";
-import { level6 } from "./questions/level6";
-import { level7 } from "./questions/level7";
-import { level8 } from "./questions/level8";
-import { level9 } from "./questions/level9";
-import { level10 } from "./questions/level10";
-import { level11 } from "./questions/level11";
-import { level12 } from "./questions/level12";
-import { extraLevel } from "./questions/extralevel";
+import {level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,extraLevel} from "./questions/levels";
 const randomIndex = Math.floor(Math.random() * level1.length);
 const randomIndex2 = Math.floor(Math.random() * level2.length);
 const randomIndex3 = Math.floor(Math.random() * level3.length);
@@ -37,8 +25,8 @@ const questions = [
   level4[randomIndex4],
   level5[randomIndex5],
   level6[randomIndex6],
-  level7[randomIndex8],
-  level8[randomIndex7],
+  level7[randomIndex7],
+  level8[randomIndex8],
   level9[randomIndex9],
   level10[randomIndex10],
   level11[randomIndex11],

@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import { questions } from "./questions";
 
 
-const Good = () =>{
+const Good = (props) =>{
+    const counter = props.counter;
+    const setCounter = props.setCounter;
+
+    const resetCounter = () =>{
+        setCounter(1);
+    }
 
 
 
@@ -15,7 +21,7 @@ const Good = () =>{
         <h1 className="good_end_description">Twój czas gry to: </h1>
 
         <Link to="/">
-            <button className="good_end_button">Menu główne</button>
+            <button onClick={resetCounter} className="good_end_button">Menu główne</button>
         </Link>
 
         <Link to="/rank">
