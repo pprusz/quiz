@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const NewGame = () =>{
-    const [inputValue, setInputValue] = useState('');
+const NewGame = (props) =>{ 
+    const inputValue= props.inputValue;
+    const setInputValue= props.setInputValue;
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);

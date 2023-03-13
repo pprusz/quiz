@@ -2,7 +2,7 @@ import "../scss/main.scss";
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {HashRouter, Route, Routes, Link, NavLink, Outlet} from 'react-router-dom';
-
+import { createClient } from '@supabase/supabase-js'
 
 import { NewGame } from "./new_game";
 import { Bad } from "./bad_end";
@@ -19,6 +19,10 @@ const root = createRoot(container)
 const App = () => {
   const [counter, setCounter] = useState(1);
   const [gameQuestions, setGameQuestions] = useState();
+  const [gameTime, setGameTime] = useState(0)
+  const [inputValue, setInputValue] = useState('');
+
+
 
  
 
@@ -26,11 +30,11 @@ const App = () => {
   return <>
     <HashRouter>
       <Routes>
-        <Route exact path="/" element={<NewGame/>} />
-        <Route path="/bad" element={<Bad counter={counter} setCounter={setCounter}/>}/>
-        <Route path="/game" element={<MainGame counter={counter} setCounter={setCounter}/>} />
+        <Route exact path="/" element={<NewGame inputValue={inputValue} setInputValue={setInputValue}/>} />
+        <Route path="/bad" element={<Bad counter={counter} setCounter={setCounter} gameTime = {gameTime}/>}/>
+        <Route path="/game" element={<MainGame counter={counter} setCounter={setCounter} gameTime={gameTime} setGameTime={setGameTime} inputValue= {inputValue}/>} />
         <Route path="/rank" element={<Rank/>} />
-        <Route path="/good" element={<Good counter={counter} setCounter={setCounter}/>}/>
+        <Route path="/good" element={<Good counter={counter} setCounter={setCounter} gameTime = {gameTime} inputValue={inputValue}/>}/>
       </Routes>
     </HashRouter>
 

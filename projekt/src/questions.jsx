@@ -13,6 +13,7 @@ const randomIndex10 = Math.floor(Math.random() * level10.length);
 const randomIndex11 = Math.floor(Math.random() * level11.length);
 const randomIndex12 = Math.floor(Math.random() * level12.length);
 const randomIndex13 = Math.floor(Math.random() * extraLevel.length);
+
 console.log(randomIndex,randomIndex2,randomIndex3,randomIndex4,randomIndex5,randomIndex6,randomIndex7,randomIndex8,randomIndex9,randomIndex10,randomIndex11,randomIndex12)
 
 

@@ -1,6 +1,8 @@
 import React, {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { questions } from "./questions";
+import { createClient } from '@supabase/supabase-js'
+
 
 
 const Buttons= (props)=>{
@@ -16,8 +18,14 @@ const Buttons= (props)=>{
     const setPublicDisabled = props.setPublicDisabled;
     const disabledIndexes = props.disabledIndexes;
     const setDisabledIndexes = props.setDisabledIndexes
+    const gameTime = props.gameTime;
+    const inputValue = props.inputValue;
 
     const navigate = useNavigate();
+    const supabaseUrl = 'https://dehmyekrfcbhlxbssoab.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlaG15ZWtyZmNiaGx4YnNzb2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MDk4NTgsImV4cCI6MTk5NDI4NTg1OH0.ajRYXXQ9TWXGDsZEtokByz4nhMNFcfGL4Y_aZWEFsr8'
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
 
 
     const [fiftyDisabled, setFiftyDisabled] = useState(false);
@@ -25,10 +33,29 @@ const Buttons= (props)=>{
     
 
     const handleAnswerCheck = () => {
+      const saveName = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('users')
+                .insert([
+                    { user_name: inputValue, game_time: gameTime }
+                  ]);
+            if (error) {
+                throw error;
+            }
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
         if (currentQuestion.correctAnswer === currentQuestion.currentAnswer) {
           setCounter(counter + 1);
           if (counter >= questions.length - 1) {
             navigate("/good");
+            console.log(inputValue, gameTime)
+            saveName()
+            console.log(inputValue, gameTime)
+
           } else {
             const disabledElements = document.querySelectorAll(".disabled");
             disabledElements.forEach(element => element.classList.remove("disabled"));

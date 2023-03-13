@@ -8,18 +8,17 @@ const MainGame = (props) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex]);
   const [disabledIndexes, setDisabledIndexes] = useState([]);
-  const [gameTime, setGameTime] = useState(0)
-
-
-  const navigate = useNavigate();
- 
+  const gameTime= props.gameTime
+  const setGameTime= props.setGameTime
   const setCounter = props.setCounter;
   const counter = props.counter;
-
-  // Ustawienia do disabled do podpowiedzi 
-  const [publicDisabled, setPublicDisabled] = useState(false);
-
+  const inputValue = props.inputValue;
   
+  const navigate = useNavigate();
+ 
+  
+
+  const [publicDisabled, setPublicDisabled] = useState(false);  
   const [showModal, setShowModal] = useState(false);
 
   const handlePublicAsk = () =>{
@@ -64,7 +63,7 @@ const startTime = Date.now();
 
 useEffect(() => {
   const intervalId = setInterval(() => {
-    setGameTime(Date.now() - startTime);
+    setGameTime(Math.floor((Date.now() - startTime)/1000));
     
   }, 1000);
   return () => clearInterval(intervalId);
@@ -79,7 +78,7 @@ useEffect(() => {
     <div className="game_container">
       <div className="game_container_question_counter">
         <div className="game_container_question_counter_element">Pytanie {counter} z 12</div>
-        <div className="game_container_question_counter_element">Czas gry: {Math.floor(gameTime/1000)} s</div>
+        <div className="game_container_question_counter_element">Czas gry: {gameTime} s</div>
       </div>
       {showModal && (
             <div className="modal">
@@ -130,6 +129,9 @@ useEffect(() => {
       setPublicDisabled = {setPublicDisabled}
       disabledIndexes = {disabledIndexes}
       setDisabledIndexes = {setDisabledIndexes}
+      gameTime = {gameTime}
+      inputValue = {inputValue}
+      
       />
 
       
