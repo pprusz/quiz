@@ -1,38 +1,40 @@
-// import React, {useState} from "react";
-import {level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,extraLevel} from "./questions/levels";
-const randomIndex = Math.floor(Math.random() * level1.length);
-const randomIndex2 = Math.floor(Math.random() * level2.length);
-const randomIndex3 = Math.floor(Math.random() * level3.length);
-const randomIndex4 = Math.floor(Math.random() * level4.length);
-const randomIndex5 = Math.floor(Math.random() * level5.length);
-const randomIndex6 = Math.floor(Math.random() * level6.length);
-const randomIndex7 = Math.floor(Math.random() * level7.length);
-const randomIndex8 = Math.floor(Math.random() * level8.length);
-const randomIndex9 = Math.floor(Math.random() * level9.length);
-const randomIndex10 = Math.floor(Math.random() * level10.length);
-const randomIndex11 = Math.floor(Math.random() * level11.length);
-const randomIndex12 = Math.floor(Math.random() * level12.length);
-const randomIndex13 = Math.floor(Math.random() * extraLevel.length);
-
-console.log(randomIndex,randomIndex2,randomIndex3,randomIndex4,randomIndex5,randomIndex6,randomIndex7,randomIndex8,randomIndex9,randomIndex10,randomIndex11,randomIndex12)
+import React, { useState } from "react";
+import { level1, level2, level3, level4, level5, level6, level7, level8, level9, level10, level11, level12, extraLevel } from "./questions/levels";
 
 
+const getQuestions = () => {
+const getRandomIndex = (level) => Math.floor(Math.random() * level.length);
+  const randomIndex1 = getRandomIndex(level1);
+  const randomIndex2 = getRandomIndex(level2);
+  const randomIndex3 = getRandomIndex(level3);
+  const randomIndex4 = getRandomIndex(level4);
+  const randomIndex5 = getRandomIndex(level5);
+  const randomIndex6 = getRandomIndex(level6);
+  const randomIndex7 = getRandomIndex(level7);
+  const randomIndex8 = getRandomIndex(level8);
+  const randomIndex9 = getRandomIndex(level9);
+  const randomIndex10 = getRandomIndex(level10);
+  const randomIndex11 = getRandomIndex(level11);
+  const randomIndex12 = getRandomIndex(level12);
+  const randomIndex13 = getRandomIndex(extraLevel);
 
+  return [    level1[randomIndex1],
+    level2[randomIndex2],
+    level3[randomIndex3],
+    level4[randomIndex4],
+    level5[randomIndex5],
+    level6[randomIndex6],
+    level7[randomIndex7],
+    level8[randomIndex8],
+    level9[randomIndex9],
+    level10[randomIndex10],
+    level11[randomIndex11],
+    level12[randomIndex12],
+    extraLevel[randomIndex13],
+  ];
+};
 
-const questions = [
-  level1[randomIndex],
-  level2[randomIndex2],
-  level3[randomIndex3],
-  level4[randomIndex4],
-  level5[randomIndex5],
-  level6[randomIndex6],
-  level7[randomIndex7],
-  level8[randomIndex8],
-  level9[randomIndex9],
-  level10[randomIndex10],
-  level11[randomIndex11],
-  level12[randomIndex12],
-  extraLevel[randomIndex13],
-]
+const questions = getQuestions();
+console.log(questions)
 
-export {questions}
+export { questions };

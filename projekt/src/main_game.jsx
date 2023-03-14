@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { questions } from "./questions";
-import { Bad } from "./bad_end";
 import { Buttons } from "./buttons_help";
+import { Bad } from "./bad_end";
 
 const MainGame = (props) => {
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -13,7 +13,7 @@ const MainGame = (props) => {
   const setCounter = props.setCounter;
   const counter = props.counter;
   const inputValue = props.inputValue;
-  
+
   const navigate = useNavigate();
  
   
@@ -140,81 +140,3 @@ useEffect(() => {
 };
 
 export { MainGame };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div className="game_container">
-
-// <div className="game_container_question_counter">
-//  <div className="game_container_question_counter_element">1</div>
-// </div>
-
-
-// <div className="game_container_main">
-//  <div className="game_container_main_question">{props}</div>
-//  <div className="game_container_main_answers">
-
-
-//  {currentQuestion.answers.map((answer, index) => (
-//    <div key={index} className="game_container_main_answers_element">
-//      <div onClick={()=>handleAnswer(answer)} className="game_container_main_answers_element_answer">{answer}</div>
-//      <div className="game_container_main_answers_element_money">
-//        <div className="money_buttons">
-//          <button className="money_buttons_btn">+25k</button>
-//          <button className="money_buttons_btn">+50k</button>
-//          <button className="money_buttons_btn">+100k</button>
-//          <button className="money_buttons_btn">All</button>
-//        </div>
-//        <div className="game_container_main_answers_element_money_added">0</div>
-//      </div>
-//    </div>
-//  ))}
-
-   
-//  </div>
-// </div> 
-
-// <div className="game_container_money_container"></div>
-// </div>

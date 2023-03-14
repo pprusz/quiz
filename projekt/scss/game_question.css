@@ -66,6 +66,7 @@
   background: linear-gradient(180deg, silver 0%, #40b40d 50%, silver 100%);
   transition: 0.2s;
   box-shadow: 0 0 35px #40b40d;
+  padding: 0;
 }
 
 .game_container_main_answers .selected:hover {

@@ -24,12 +24,13 @@ const Bad = (props) =>{
         <h1 className="bad_end_description">Odpadłeś na pytaniu: {counter}</h1>
         <h1 className="bad_end_description">Twój czas gry to: {gameTime}s</h1>
 
+
         <Link to="/">
             <button onClick={resetCounter} className="bad_end_button">Spróbuj zagrać ponownie</button>
         </Link>
 
         <Link to="/rank">
-            <button  className="new_game_rank">Ranking</button>
+            <button onClick={resetCounter}  className="new_game_rank">Ranking</button>
         </Link>
     
     </div>
