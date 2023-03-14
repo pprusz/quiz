@@ -7,9 +7,12 @@ const Bad = (props) =>{
     const counter = props.counter;
     const setCounter = props.setCounter;
     const gameTime = props.gameTime;
+    const setInputValue = props.setInputValue;
+
 
     const resetCounter = () => {
         setCounter(1)
+        setInputValue('')
     }
 
 

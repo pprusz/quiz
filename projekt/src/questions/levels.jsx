@@ -751,7 +751,7 @@ const level12 = [
     {   level: 12,
         question: 'Komiksowym "dzieckiem" rysownika Boba Kane`a jest:',
         answers: ['Spider-Man', 'Batman', 'Superman', 'Captain America'],
-        public: [14,35,40,11],
+        public: [14,40,35,11],
         correctAnswer: 'Batman',
     },
     {   level: 12,

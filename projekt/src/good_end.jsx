@@ -9,6 +9,7 @@ const Good = (props) =>{
     const setCounter = props.setCounter;
     const gameTime = props.gameTime;
     const inputValue = props.inputValue;
+    const setInputValue = props.setInputValue;
 
     const supabaseUrl = 'https://dehmyekrfcbhlxbssoab.supabase.co'
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlaG15ZWtyZmNiaGx4YnNzb2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MDk4NTgsImV4cCI6MTk5NDI4NTg1OH0.ajRYXXQ9TWXGDsZEtokByz4nhMNFcfGL4Y_aZWEFsr8'
@@ -17,6 +18,7 @@ const Good = (props) =>{
 
     const resetCounter = () =>{
         setCounter(1);
+        setInputValue('')
     }
 
 
