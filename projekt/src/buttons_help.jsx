@@ -52,10 +52,7 @@ const Buttons= (props)=>{
           setCounter(counter + 1);
           if (counter >= questions.length - 1) {
             navigate("/good");
-            console.log(inputValue, gameTime)
             saveName()
-            console.log(inputValue, gameTime)
-
           } else {
             const disabledElements = document.querySelectorAll(".disabled");
             disabledElements.forEach(element => element.classList.remove("disabled"));

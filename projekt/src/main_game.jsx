@@ -14,10 +14,6 @@ const MainGame = (props) => {
   const counter = props.counter;
   const inputValue = props.inputValue;
 
-  const navigate = useNavigate();
- 
-  
-
   const [publicDisabled, setPublicDisabled] = useState(false);  
   const [showModal, setShowModal] = useState(false);
 
@@ -33,8 +29,6 @@ const MainGame = (props) => {
       percentages[i].innerHTML = `${currentQuestion.public[i]}%`;
     }
   }
-
-
 
  const handleAnswerClick = (index, answer) => {
   const answerElements = document.querySelectorAll('.answer');
@@ -58,7 +52,6 @@ const MainGame = (props) => {
   }
 };
 
-
 const startTime = Date.now();
 
 useEffect(() => {
@@ -68,11 +61,6 @@ useEffect(() => {
   }, 1000);
   return () => clearInterval(intervalId);
 }, []);
-
-
-
-
-
 
   return (
     <div className="game_container">

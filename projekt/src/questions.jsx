@@ -17,8 +17,10 @@ const getRandomIndex = (level) => Math.floor(Math.random() * level.length);
   const randomIndex11 = getRandomIndex(level11);
   const randomIndex12 = getRandomIndex(level12);
   const randomIndex13 = getRandomIndex(extraLevel);
+  console.log(randomIndex1,randomIndex2,randomIndex10,randomIndex11,randomIndex12,randomIndex13,randomIndex3,randomIndex4,randomIndex5,randomIndex6,randomIndex7,randomIndex8,randomIndex9)
 
-  return [    level1[randomIndex1],
+  return [
+    level1[randomIndex1],
     level2[randomIndex2],
     level3[randomIndex3],
     level4[randomIndex4],
@@ -35,6 +37,4 @@ const getRandomIndex = (level) => Math.floor(Math.random() * level.length);
 };
 
 const questions = getQuestions();
-console.log(questions)
-
 export { questions };

@@ -8,6 +8,8 @@ const Bad = (props) =>{
     const setCounter = props.setCounter;
     const gameTime = props.gameTime;
     const setInputValue = props.setInputValue;
+    const questionIndex= props.questionIndex;
+    console.log(questionIndex)
 
 
     const resetCounter = () => {
